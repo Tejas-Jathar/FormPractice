@@ -1,0 +1,25 @@
+<form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+ 
+  
+    <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" id="firstname" formControlName="firstname" placeholder="Enter first name">
+        <small class="text-danger" *ngIf="isFieldInvalid('firstname')">First Name is required</small>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" id="lastname" formControlName="lastname" placeholder="Enter last name">
+        <small class="text-danger" *ngIf="isFieldInvalid('lastname')">Last Name is required</small>
+
+      </div>
+      <div class="form-group">
+        <label for="mob">Phone no.</label>
+        <input type="text" class="form-control" id="mob" formControlName="mob" placeholder="Enter mobile number">
+        <small class="text-danger" *ngIf="isFieldInvalid('mob')">Phone no. is required</small>
+
+      </div>
+      
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="customerForm.invalid">Submit</button>
+
+    </form>
+  

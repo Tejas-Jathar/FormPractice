@@ -1,0 +1,29 @@
+<div class="container">
+    <h3>Update Customer</h3>
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" id="firstname" formControlName="firstname">
+        <small class="text-danger" *ngIf="isFieldInvalid('firstname')">First Name is required</small>
+     
+      </div>
+  
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" id="lastname" formControlName="lastname">
+        <small class="text-danger" *ngIf="isFieldInvalid('lastname')">Last Name is required</small>
+     
+      </div>
+  
+      <div class="form-group">
+        <label>Phone no.</label>
+        <input type="text" class="form-control" id="mob" formControlName="mob">
+        <small class="text-danger" *ngIf="isFieldInvalid('mob')">Phone no. is required</small>
+     
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="customerForm.invalid">Submit</button>
+    </form>
+  </div>
+  
